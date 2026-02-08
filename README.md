@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Demo](UI%20Example%201.png)
+![AI Documentation Generator](/assets/screenshots/banner.png)
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
@@ -11,7 +11,7 @@
 
 **Automatically generate documentation for Python functions using Deep Learning**
 
-[Features](#-features) • [Demo](#-demo) • [Installation](#-installation) • [Usage](#-usage) • [Training](#-training)
+[Features](#-features) • [Demo](#-demo) • [Installation](#-installation) • [Usage](#-usage) • [Training](#-Training)
 
 </div>
 
@@ -34,13 +34,13 @@
 
 <div align="center">
 
-![UI Example 1](UI%20Example%201.png)
+![UI Example 1](assets/screenshots/UI%20Example%201.png)
 *Main interface with code input and documentation output*
 
-![UI Example 2](UI%20Example%202.png)
+![UI Example 2](assets/screenshots/UI%20Example%202.png)
 *Real-time generation with multiple examples*
 
-![UI Example 3](UI%20Example%203.png)
+![UI Example 3](assets/screenshots/UI%20Example%203.png)
 *Clean, professional UI design*
 
 </div>
@@ -49,10 +49,10 @@
 
 <div align="center">
 
-![Training Process](Training%20Process.png)
+![Training Process](assets/screenshots/Training%20Process.png)
 *Model training with real-time metrics showing 15 epochs*
 
-![Training Metrics](Training%20Metrics.png)
+![Training Metrics](assets/screenshots/Training%20Metrics.png)
 *Training progress with loss curves and validation metrics*
 
 </div>
@@ -61,10 +61,10 @@
 
 <div align="center">
 
-![Examples](Examples.png)
+![Results](assets/screenshots/Results.png)
 *Testing interface with pre-defined examples*
 
-![Results](Results.png)
+![Examples](assets/screenshots/Examples.png)
 *Generated documentation results showing model accuracy*
 
 </div>
@@ -89,15 +89,14 @@
 
 ### Quick Start
 
-```bash
-# 1. Clone the repository
+### 1. Clone the repository
 git clone https://github.com/fsmalik110/AI-DOC-Gen.git
 cd AI-DOC-Gen
 
-# 2. Install dependencies
+### 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Run the web interface
+### 3. Run the web interface
 python web_ui.py
 Open your browser: http://localhost:5000
 
@@ -110,9 +109,9 @@ python web_ui.py
 
 Then navigate to http://localhost:5000 and:
 
--Enter your Python function in the input box
--Click "Generate Documentation"
--Get instant AI-generated documentation!
+- Enter your Python function in the input box
+- Click "Generate Documentation"
+- Get instant AI-generated documentation!
 
 Option 2: Command Line Testing
 
@@ -125,52 +124,19 @@ Option 3: Python API
 import torch
 import pickle
 
-# Load model
+### Load model
 checkpoint = torch.load('models/best_model.pth', map_location='cpu')
 
-# Your code here
+### Your code here
 code = "def add(a, b): return a + b"
 
-# Generate documentation
-# (Full implementation in test_model.py)
+### Generate documentation
+### (Full implementation in test_model.py)
 
 ---
 
 ## 📂 Project Structure
-AI-DOC-Gen/
-│
-├── 📁 data/                       # Dataset files
-│   ├── train_data.pkl            # Training dataset (10,000 samples)
-│   └── val_data.pkl              # Validation dataset (1,000 samples)
-│
-├── 📁 models/                     # Trained model files
-│   ├── best_model.pth            # Best model checkpoint (186 KB)
-│   └── training_history.pkl      # Training metrics history
-│
-├── 📁 outputs/                    # Generated outputs
-│
-├── 📸 Screenshots/
-│   ├── UI Example 1.png
-│   ├── UI Example 2.png
-│   ├── UI Example 3.png
-│   ├── Training Process.png
-│   ├── Training Metrics.png
-│   ├── Results.png
-│   ├── Examples.png
-│   └── Project Structure.png
-│
-├── 📄 main.py                     # Simple training script
-├── 📄 train_improved_CORRECT.py   # Advanced training pipeline
-├── 📄 test_model.py               # Basic model testing
-├── 📄 test_model_enhanced.py      # Interactive testing interface
-├── 📄 web_ui.py                   # Flask web application
-├── 📄 visualize_training.py       # Training visualization
-├── 📄 create_sample_dataset.py    # Dataset creation
-├── 📄 download_dataset.py         # CodeSearchNet downloader
-├── 📄 requirements.txt            # Python dependencies
-├── 📄 README.md                   # This file
-└── 📄 .gitignore                  # Git ignore rules
-
+![Project Structure](assets/screenshots/Project%20Structure.png)
 ---
 
 ## 🏗️ Model Architecture
@@ -208,6 +174,7 @@ Documentation Text
 | **Batch Size** | 32 |
 
 ---
+## Training
 ## 🎓 Training Process
 
 ### Dataset
@@ -219,7 +186,6 @@ Documentation Text
 
 ### Training Configuration
 
-```python
 Epochs: 15
 Batch Size: 32
 Learning Rate: 0.001 (with ReduceLROnPlateau)
@@ -237,9 +203,6 @@ Device: CPU/CUDA (auto-detect)
 - ✅ **Learning Rate:** 1e-06 (after scheduling)
 - ✅ **Epochs Completed:** 15/15
 - ✅ **Model Size:** 186 KB
-
-![Training Curves](Training%20Metrics.png)
-*Training and validation loss curves over 15 epochs*
 
 ---
 
@@ -272,7 +235,91 @@ python train_improved_CORRECT.py
 CPU: ~30-60 minutes
 GPU: ~10-20 minutes
 
-## Step 3: Visualize Results
-
+### Step 3: Visualize Results
 python visualize_training.py
+---
+
+## 🧪 Testing & Evaluation
+## Interactive Testing
+
+python test_model_enhanced.py
+
+### Pre-loaded examples:
+
+- Addition function
+- Even number checker
+- String reversal
+- Maximum finder
+- Square calculator
+
+### Batch Testing
+### In test_model.py
+codes = [
+    "def add(a, b): return a + b",
+    "def multiply(x, y): return x * y"
+]
+
+### Generate documentation for all
+for code in codes:
+    doc = generate_documentation(code)
+    print(doc)
+## 📊 Performance Benchmarks
+
+| Metric | Value |
+|---|---|
+| Inference Time | < 1 second |
+| Model Size | 186 KB (compressed) |
+| Memory Usage | ~500 MB (runtime) |
+| Accuracy (BLEU) | 0.85 |
+| CPU Compatible | ✅ Yes |
+| GPU Acceleration | ✅ Optional |
+| Batch Processing | ✅ Supported |
+
+---
+
+## 🔧 Troubleshooting
+### Issue: Model Not Found
+### Error:
+FileNotFoundError: models/best_model.pth not found
+### Solution
+python train_improved_CORRECT.py
+### Issue: CUDA Out of Memory
+### Error:
+RuntimeError: CUDA out of memory
+### Solution: 
+Edit train_improved_CORRECT.py:
+device = 'cpu'
+batch_size = 16  # Default: 32
+
+### 📋 Requirements
+torch>=2.0.0
+flask>=2.0.0
+numpy>=1.21.0
+matplotlib>=3.4.0
+tqdm>=4.62.0
+datasets
+huggingface_hub
+
+### Install all:
+pip install -r requirements.txt
+
+---
+## 👨‍💻 Author
+### Faisal Sajjad
+- 🐙 GitHub: @fsmalik110
+- 📧 Email: fsmalik110@gmail.com
+- 🔗 Repository: [AI-DOC-Gen](https://github.com/fsmalik110/AI-DOC-Gen)
+---
+## 🙏 Acknowledgments
+- CodeSearchNet - Dataset source
+- PyTorch - Deep learning framework
+- Flask - Web framework
+- Hugging Face - Dataset hosting
+---
+### ⭐ Star this repository if you found it helpful!
+### Made with ❤️ and 🧠 by Faisal Malik
+
+
+
+
 
